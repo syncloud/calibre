@@ -36,10 +36,13 @@ func (i *Installer) Install() error {
 		return err
 	}
 
+	cp.Copy(path.Join(AppDir, "calibre/web/metadata.db"), path.Join(DataDir, "metadata.db"))
+
 	err = os.Mkdir(path.Join(CommonDir, "nginx"), 0755)
 	if err != nil {
 		return err
 	}
+
 	err = os.Mkdir(path.Join(CommonDir, "log"), 0755)
 	if err != nil {
 		return err
