@@ -8,6 +8,9 @@ if [[ $(uname -m) == "armv7l" ]]; then
   source "$HOME/.cargo/env"
 fi
 
+apt update
+apt install software-properties-common
+apt-add-repository non-free
 apt-get update
 # build
 apt-get install -y --no-install-recommends \
@@ -20,7 +23,6 @@ apt-get install -y --no-install-recommends \
 apt-get install -y --no-install-recommends \
   imagemagick \
   ghostscript \
-  libldap-2.5-0 \
   libnss3 \
   libsasl2-2 \
   libxcomposite1 \
