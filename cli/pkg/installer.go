@@ -36,8 +36,8 @@ func (i *Installer) Install() error {
 		return err
 	}
 
-	err = cp.Copy(path.Join(AppDir, "calibre/web/metadata.db"), path.Join(DataDir, "metadata.db"))
- if err != nil {
+	err = cp.Copy(path.Join(AppDir, "calibre/web/app.db"), path.Join(DataDir, "app.db"))
+	if err != nil {
 		return err
 	}
 
