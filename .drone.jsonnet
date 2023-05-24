@@ -5,7 +5,7 @@ local version = "0.6.20";
 local nginx = "1.24.0";
 local go = "1.18.2-buster";
 
-local build(arch, test_ui, dind) = [{
+local build(arch, test_ui, dind, kepubify_arch) = [{
     kind: "pipeline",
     type: "docker",
     name: arch,
@@ -38,7 +38,7 @@ local build(arch, test_ui, dind) = [{
             name: "build calibre",
             image: "docker:" + dind,
             commands: [
-                "./calibre/build.sh " + version
+                "./calibre/build.sh " + version + " " + kepubify_arch
             ],
             volumes: [
                 {
@@ -271,6 +271,6 @@ local build(arch, test_ui, dind) = [{
       }
   }];
 
-build("amd64", true, "20.10.21-dind") +
-build("arm64", false, "19.03.8-dind") +
-build("arm", false, "19.03.8-dind")
+build("amd64", true, "20.10.21-dind", "64bit") +
+build("arm64", false, "19.03.8-dind", "arm64") +
+build("arm", false, "19.03.8-dind", "arm")
