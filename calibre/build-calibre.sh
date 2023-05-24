@@ -9,7 +9,7 @@ if [[ $(uname -m) == "armv7l" ]]; then
 fi
 
 apt update
-apt install software-properties-common
+apt install -y software-properties-common
 apt-add-repository non-free
 apt-get update
 # build
