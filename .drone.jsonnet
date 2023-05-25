@@ -76,8 +76,9 @@ local build(arch, test_ui, dind, kepubify_arch) = [{
             name: "database",
             image: "keinos/sqlite3:3.38.5",
             commands: [
-	        "ls -la build/snap",
-                "sqlite3 build/snap/calibre/web/app.db -init config/init.sql",
+	            "ls -la build/snap/calibre/web",
+	            "ls -la config/init.sql",
+                "sqlite3 build/snap/calibre/web/app.db < config/init.sql",
             ]
         },
         {
