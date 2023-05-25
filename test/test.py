@@ -29,6 +29,8 @@ def module_setup(request, device, app_dir, artifact_dir):
         device.run_ssh('ls -la /var/snap/calibre > {0}/var.snap.calibre.ls.log'.format(TMP_DIR), throw=False)
         device.run_ssh('ls -la /var/snap/calibre/current/ > {0}/var.snap.calibre.current.ls.log'.format(TMP_DIR),
                        throw=False)
+        device.run_ssh('snap run calibre.sqlite  > {0}/db.settings.log'.format(TMP_DIR),
+                       throw=False)
         device.run_ssh('ls -la /var/snap/calibre/common > {0}/var.snap.calibre.common.ls.log'.format(TMP_DIR),
                        throw=False)
         device.run_ssh('ls -la /data > {0}/data.ls.log'.format(TMP_DIR), throw=False)

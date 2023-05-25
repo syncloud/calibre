@@ -22,7 +22,20 @@ local build(arch, test_ui, dind, kepubify_arch) = [{
             ]
         },
         {
-            name: "build nginx",
+            name: "sqlite",
+            image: "docker:" + dind,
+            commands: [
+                "./sqlite/build.sh"
+            ],
+            volumes: [
+               {
+                    name: "dockersock",
+                    path: "/var/run"
+                }
+            ]
+        },
+        {
+            name: "nginx",
             image: "docker:" + dind,
                 commands: [
                 "./nginx/build.sh " + nginx
@@ -35,7 +48,7 @@ local build(arch, test_ui, dind, kepubify_arch) = [{
             ]
         },
         {
-            name: "build calibre",
+            name: "calibre",
             image: "docker:" + dind,
             commands: [
                 "./calibre/build.sh " + version + " " + kepubify_arch
@@ -48,7 +61,7 @@ local build(arch, test_ui, dind, kepubify_arch) = [{
             ]
         },
         {
-            name: "build cli",
+            name: "cli",
             image: "golang:" + go,
             commands: [
                 "cd cli",
@@ -57,6 +70,13 @@ local build(arch, test_ui, dind, kepubify_arch) = [{
                 "go build -ldflags '-linkmode external -extldflags -static' -o ../build/snap/meta/hooks/pre-refresh ./cmd/pre-refresh",
                 "go build -ldflags '-linkmode external -extldflags -static' -o ../build/snap/meta/hooks/post-refresh ./cmd/post-refresh",
                 "go build -ldflags '-linkmode external -extldflags -static' -o ../build/snap/bin/cli ./cmd/cli",
+            ]
+        },
+        {
+            name: "database",
+            image: "keinos/sqlite3:3.38.5",
+            commands: [
+                "sqlite3 build/snap/calibre/app.db < config/init.sql",
             ]
         },
         {
