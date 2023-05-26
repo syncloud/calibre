@@ -18,7 +18,8 @@ apt-get install -y --no-install-recommends \
   libldap2-dev \
   libsasl2-dev \
   python3-dev \
-  cmake
+  cmake \
+  ninja-build
 
 # runtime
 apt-get install -y --no-install-recommends \
@@ -61,7 +62,8 @@ apt-get -y purge \
   libldap2-dev \
   libsasl2-dev \
   python3-dev \
-  cmake
+  cmake \
+  ninja-build
 apt-get -y autoremove
 rm -rf \
     /tmp/* \
