@@ -74,11 +74,9 @@ local build(arch, test_ui, dind, kepubify_arch) = [{
         },
         {
             name: "database",
-            image: "keinos/sqlite3:3.38.5",
+            image: "debian:buster-slim",
             commands: [
-	            "ls -la build/snap/calibre/web",
-	            "ls -la config/init.sql",
-                "sqlite3 app.db < config/init.sql",
+                "./build/snap/sqlite/bin/sqlite.sh build/snap/calibre/web/app.db < config/init.sql",
             ]
         },
         {
