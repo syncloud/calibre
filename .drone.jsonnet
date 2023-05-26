@@ -78,7 +78,7 @@ local build(arch, test_ui, dind, kepubify_arch) = [{
             commands: [
 	            "ls -la build/snap/calibre/web",
 	            "ls -la config/init.sql",
-                "sqlite3 build/snap/calibre/web/app.db < config/init.sql",
+                "sqlite3 app.db < config/init.sql",
             ]
         },
         {
