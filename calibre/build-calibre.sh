@@ -17,7 +17,8 @@ apt-get install -y --no-install-recommends \
   build-essential \
   libldap2-dev \
   libsasl2-dev \
-  python3-dev
+  python3-dev \
+  cmake
 
 # runtime
 apt-get install -y --no-install-recommends \
@@ -59,7 +60,8 @@ apt-get -y purge \
   build-essential \
   libldap2-dev \
   libsasl2-dev \
-  python3-dev
+  python3-dev \
+  cmake
 apt-get -y autoremove
 rm -rf \
     /tmp/* \
