@@ -54,7 +54,7 @@ wget https://github.com/janeczku/calibre-web/blob/master/library/metadata.db -O 
 cd web
 pip install -r requirements.txt
 if [[ $(uname -m) == "armv7l" ]]; then
-  sed -i 's/python-Levenshtein.*/d' optional-requirements.txt
+  sed -i '/python-Levenshtein.*/d' optional-requirements.txt
 fi
 pip install -r optional-requirements.txt
 
