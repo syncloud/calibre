@@ -106,7 +106,7 @@ CREATE TABLE settings (
 	CHECK (config_remote_login IN (0, 1)), 
 	CHECK (config_use_goodreads IN (0, 1))
 );
-INSERT INTO settings (id) VALUES(1)
+INSERT INTO settings (id) VALUES(1);
 update settings set mail_server='localhost' where id = 1;
 update settings set mail_server='localhost' where id = 1;
 update settings set mail_port = 25 where id = 1;
