@@ -106,107 +106,121 @@ CREATE TABLE settings (
 	CHECK (config_remote_login IN (0, 1)), 
 	CHECK (config_use_goodreads IN (0, 1))
 );
-INSERT INTO settings VALUES(
-1,
-'localhost',
-25,
-0,
-'mail@example.com',
-NULL,
-'calibre <mail@example.com>',
-NULL,
-8083,
-NULL,
-NULL,
-'Calibre-Web',
-60,
-4,
-0,
-'^(A|The|An|Der|Die|Das|Den|Ein|Eine|Einen|Dem|Des|Einem|Eines)\s+',
-20,
-0,
-0,
-0,
-0,
-6143,
-NULL,
-0,
-NULL,
-NULL,
-0,
-0,
-NULL,
-NULL,
-'',
-NULL,
-0,
-'',
-NULL,
-'',
-0,
-0,
-0,
-NULL,
-0,
-'',
-'',
-0,
-'',
-'',
-1,
-0,
-'localhost',
-389,
-'ldap',
-'cn=admin,dc=syncloud,dc=org',
-'syncloud',
-0,
-0,
-0,
-NULL,
-'dc=syncloud,dc=org',
-'(&(objectclass=posixGroup)(cn=%s))',
-1,
-0,
-NULL,
-0,
-X'674141414141426b62356a6471567a7167414d6a6146426d597674554331547a78586b706d554d42616c3276336b635156627252415278656e487569674d5572394474647259466c3847434d78337359425f637132556a75357549715030437543413d3d',
-NULL,
-NULL,
-26214400,
-0,
-'{}',
-NULL,
-8083,
-'',
-'all',
-'en',
-0,
-0,
-0,
-'',
-'',
-'',
-'(&(objectclass=posixGroup)(cn=%s))',
-'memberUid',
-'calibreweb',
-'',
-'cbz,pdf,m4b,epub,opus,kepub,azw,ogg,flac,cbt,txt,mp3,djvu,azw3,html,rtf,docx,mp4,m4a,mobi,wav,lit,doc,odt,cbr,prc,fb2',
-0,4,10,0,0,0,0,1,8,1,1,1,1,1,1);
+INSERT INTO settings (id) VALUES(1)
+update settings set mail_server='localhost' where id = 1;
+update settings set mail_server='localhost' where id = 1;
+update settings set mail_port = 25 where id = 1;
+update settings set mail_use_ssl = 0 where id = 1;
+update settings set mail_login = 'mail@example.com' where id = 1;
+update settings set mail_password = NULL where id = 1;
+update settings set mail_from = 'calibre <mail@example.com>' where id = 1;
+update settings set config_calibre_dir = NULL where id = 1;
+update settings set config_port = 8083 where id = 1;
+update settings set config_certfile = NULL where id = 1;
+update settings set config_keyfile = NULL where id = 1;
+update settings set config_calibre_web_title = 'Calibre-Web' where id = 1;
+update settings set config_books_per_page = 60 where id = 1;
+update settings set config_random_books = 4 where id = 1;
+update settings set config_read_column = 0 where id = 1;
+update settings set config_title_regex = '^(A|The|An|Der|Die|Das|Den|Ein|Eine|Einen|Dem|Des|Einem|Eines)\s+' where id = 1;
+update settings set config_log_level = 20 where id = 1;
+update settings set config_uploading = 0 where id = 1;
+update settings set config_anonbrowse = 0 where id = 1;
+update settings set config_public_reg = 0 where id = 1;
+update settings set config_default_role = 0 where id = 1;
+update settings set config_default_show = 6143 where id = 1;
+update settings set config_columns_to_ignore = NULL where id = 1;
+update settings set config_use_google_drive = 0 where id = 1;
+update settings set config_google_drive_folder = NULL where id = 1;
+update settings set config_google_drive_watch_changes_response = NULL where id = 1;
+update settings set config_remote_login = 0 where id = 1;
+update settings set config_use_goodreads = 0 where id = 1;
+update settings set config_goodreads_api_key = NULL where id = 1;
+update settings set config_goodreads_api_secret = NULL where id = 1;
+update settings set config_mature_content_tags = '' where id = 1;
+update settings set config_logfile = NULL where id = 1;
+update settings set config_ebookconverter = 0 where id = 1;
+update settings set config_converterpath = '' where id = 1;
+update settings set config_calibre = NULL where id = 1;
+update settings set config_rarfile_location = '' where id = 1;
+update settings set config_authors_max = 0 where id = 1;
+update settings set config_theme = 0 where id = 1;
+update settings set config_access_log = 0 where id = 1;
+update settings set config_access_logfile = NULL where id = 1;
+update settings set config_kobo_sync = 0 where id = 1;
+update settings set config_denied_tags = '' where id = 1;
+update settings set config_allowed_tags = '' where id = 1;
+update settings set config_restricted_column = 0 where id = 1;
+update settings set config_denied_column_value = '' where id = 1;
+update settings set config_allowed_column_value = '' where id = 1;
+update settings set config_login_type = 1 where id = 1;
+update settings set config_kobo_proxy = 0 where id = 1;
+update settings set config_ldap_provider_url = 'localhost' where id = 1;
+update settings set config_ldap_port = 389 where id = 1;
+update settings set config_ldap_schema = 'ldap' where id = 1;
+update settings set config_ldap_serv_username = 'cn=admin,dc=syncloud,dc=org' where id = 1;
+update settings set config_ldap_serv_password = 'syncloud' where id = 1;
+update settings set config_ldap_use_ssl = 0 where id = 1;
+update settings set config_ldap_use_tls = 0 where id = 1;
+update settings set config_ldap_require_cert = 0 where id = 1;
+update settings set config_ldap_cert_path = NULL where id = 1;
+update settings set config_ldap_dn = 'ou=users,dc=syncloud,dc=org' where id = 1;
+update settings set config_ldap_user_object = '(&(objectclass=posixGroup)(cn=%s))' where id = 1;
+update settings set config_ldap_openldap = 1 where id = 1;
+update settings set config_updatechannel = 0 where id = 1;
+update settings set config_reverse_proxy_login_header_name = NULL where id = 1;
+update settings set config_allow_reverse_proxy_header_login = 0 where id = 1;
+update settings set mail_password_e = X'674141414141426b62356a6471567a7167414d6a6146426d597674554331547a78586b706d554d42616c3276336b635156627252415278656e487569674d5572394474647259466c3847434d78337359425f637132556a75357549715030437543413d3d' where id = 1;
+update settings set config_goodreads_api_secret_e = NULL where id = 1;
+update settings set config_ldap_serv_password_e = NULL where id = 1;
+update settings set mail_size = 26214400 where id = 1;
+update settings set mail_server_type = 0 where id = 1;
+update settings set mail_gmail_token = '{}' where id = 1;
+update settings set config_calibre_uuid = NULL where id = 1;
+update settings set config_external_port = 8083 where id = 1;
+update settings set config_trustedhosts = '' where id = 1;
+update settings set config_default_language = 'all' where id = 1;
+update settings set config_default_locale = 'en' where id = 1;
+update settings set config_register_email = 0 where id = 1;
+update settings set config_ldap_authentication = 0 where id = 1;
+update settings set config_ldap_encryption = 0 where id = 1;
+update settings set config_ldap_cacert_path = '' where id = 1;
+update settings set config_ldap_key_path = '' where id = 1;
+update settings set config_ldap_member_user_object = '' where id = 1;
+update settings set config_ldap_group_object_filter = '(&(objectclass=posixGroup)(cn=%s))' where id = 1;
+update settings set config_ldap_group_members_field = 'memberUid' where id = 1;
+update settings set config_ldap_group_name = 'calibreweb' where id = 1;
+update settings set config_kepubifypath = '' where id = 1;
+update settings set config_upload_formats = 'cbz,pdf,m4b,epub,opus,kepub,azw,ogg,flac,cbt,txt,mp3,djvu,azw3,html,rtf,docx,mp4,m4a,mobi,wav,lit,doc,odt,cbr,prc,fb2' where id = 1;
+update settings set config_unicode_filename = 0 where id = 1;
+update settings set schedule_start_time = 4 where id = 1;
+update settings set schedule_duration = 10 where id = 1;
+update settings set schedule_generate_book_covers = 0 where id = 1;
+update settings set schedule_generate_series_covers = 0 where id = 1;
+update settings set schedule_reconnect = 0 where id = 1;
+update settings set schedule_metadata_backup = 0 where id = 1;
+update settings set config_password_policy = 1 where id = 1;
+update settings set config_password_min_length = 8 where id = 1;
+update settings set config_password_number = 1 where id = 1;
+update settings set config_password_lower = 1 where id = 1;
+update settings set config_password_upper = 1 where id = 1;
+update settings set config_password_special = 1 where id = 1;
+update settings set config_session = 1 where id = 1;
+update settings set config_ratelimiter = 1 where id = 1;
 
 CREATE TABLE registration (
-	id INTEGER NOT NULL, 
-	domain VARCHAR, 'allow' INTEGER, 
+	id INTEGER NOT NULL,
+	domain VARCHAR, 'allow' INTEGER,
 	PRIMARY KEY (id)
 );
 INSERT INTO registration VALUES(1,'%.%',1);
 CREATE TABLE bookmark (
-	id INTEGER NOT NULL, 
-	user_id INTEGER, 
-	book_id INTEGER, 
-	format VARCHAR COLLATE "NOCASE", 
-	bookmark_key VARCHAR, 
-	PRIMARY KEY (id), 
+	id INTEGER NOT NULL,
+	user_id INTEGER,
+	book_id INTEGER,
+	format VARCHAR COLLATE "NOCASE",
+	bookmark_key VARCHAR,
+	PRIMARY KEY (id),
 	FOREIGN KEY(user_id) REFERENCES user (id)
 );
 CREATE TABLE shelf (
