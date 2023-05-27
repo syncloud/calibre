@@ -6,7 +6,6 @@ KEPUBIFY_VERSION=4.0.4
 if [[ $(uname -m) == "armv7l" ]]; then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh  -s -- -y
   source "$HOME/.cargo/env"
-  sed -i 's/python-Levenshtein.*/d' optional-requirements.txt
 fi
 
 apt update
