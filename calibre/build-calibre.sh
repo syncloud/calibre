@@ -38,10 +38,16 @@ apt-get install -y --no-install-recommends \
   python3-pkg-resources \
   unrar
 
-wget https://github.com/janeczku/calibre-web/releases/download/$VERSION/calibre-web-$VERSION.tar.gz
-tar xf calibre-web-$VERSION.tar.gz
-rm calibre-web-$VERSION.tar.gz
-mv calibre-web-$VERSION web
+#wget https://github.com/janeczku/calibre-web/releases/download/$VERSION/calibre-web-$VERSION.tar.gz
+#tar xf calibre-web-$VERSION.tar.gz
+#rm calibre-web-$VERSION.tar.gz
+#mv calibre-web-$VERSION web
+
+wget https://github.com/cyberb/calibre-web/archive/refs/heads/master.tar.gz
+tar xf master.tar.gz
+rm master.tar.gz
+mv calibre-web-master web
+
 wget https://github.com/janeczku/calibre-web/blob/master/library/metadata.db -O web/metadata.db
 #wget https://raw.githubusercontent.com/linuxserver/docker-calibre-web/master/root/defaults/app.db -O web/app.db
 cd web
