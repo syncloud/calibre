@@ -6,6 +6,7 @@ KEPUBIFY_VERSION=4.0.4
 if [[ $(uname -m) == "armv7l" ]]; then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh  -s -- -y
   source "$HOME/.cargo/env"
+  sed -i 's/python-Levenshtein.*/d' optional-requirements.txt
 fi
 
 apt update
@@ -52,6 +53,9 @@ wget https://github.com/janeczku/calibre-web/blob/master/library/metadata.db -O 
 #wget https://raw.githubusercontent.com/linuxserver/docker-calibre-web/master/root/defaults/app.db -O web/app.db
 cd web
 pip install -r requirements.txt
+if [[ $(uname -m) == "armv7l" ]]; then
+  sed -i 's/python-Levenshtein.*/d' optional-requirements.txt
+fi
 pip install -r optional-requirements.txt
 
 curl -o \
