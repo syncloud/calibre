@@ -36,7 +36,10 @@ apt-get install -y --no-install-recommends \
   python3-minimal \
   python3-pip \
   python3-pkg-resources \
-  unrar
+  unrar \
+  libmagickwand-dev
+
+mv /usr/lib/*-linux*/ImageMagick-*/modules-*/coders /usr/lib/ImageMagickCoders
 
 #wget https://github.com/janeczku/calibre-web/releases/download/$VERSION/calibre-web-$VERSION.tar.gz
 #tar xf calibre-web-$VERSION.tar.gz
