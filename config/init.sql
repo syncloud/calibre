@@ -182,7 +182,7 @@ update settings set config_trustedhosts = '' where id = 1;
 update settings set config_default_language = 'all' where id = 1;
 update settings set config_default_locale = 'en' where id = 1;
 update settings set config_register_email = 0 where id = 1;
-update settings set config_ldap_authentication = 0 where id = 1;
+update settings set config_ldap_authentication = 1 where id = 1;
 update settings set config_ldap_encryption = 0 where id = 1;
 update settings set config_ldap_cacert_path = '' where id = 1;
 update settings set config_ldap_key_path = '' where id = 1;
