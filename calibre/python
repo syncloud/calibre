@@ -4,5 +4,4 @@ LIBS=$(echo ${DIR}/lib/*-linux-gnu*)
 LIBS=$LIBS:$(echo ${DIR}/usr/lib/*-linux-gnu*)
 LIBS=$LIBS:$(echo ${DIR}/usr/lib)
 LIBS=$LIBS:$(echo ${DIR}/usr/local/lib)
-export LD_LIBRARY_PATH=$LIBS
-MAGICK_CODER_MODULE_PATH=$(echo ${DIR}/usr/lib/ImageMagickCoders) ${DIR}/lib/*-linux*/ld-*.so --library-path $LIBS ${DIR}/usr/local/bin/python3 "$@"
+LD_LIBRARY_PATH=$LIBS MAGICK_CODER_MODULE_PATH=$(echo ${DIR}/usr/lib/ImageMagickCoders) ${DIR}/lib/*-linux*/ld-*.so --library-path $LIBS ${DIR}/usr/local/bin/python3 "$@"
