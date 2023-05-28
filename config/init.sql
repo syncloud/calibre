@@ -64,9 +64,6 @@ CREATE TABLE settings (
     `config_updatechannel` INTEGER DEFAULT 0,
     `config_reverse_proxy_login_header_name` VARCHAR,
     `config_allow_reverse_proxy_header_login` BOOLEAN DEFAULT 0,
-    'mail_password_e' String,
-    'config_goodreads_api_secret_e' String,
-    'config_ldap_serv_password_e' String,
     `mail_size` INTEGER DEFAULT `26214400`,
     `mail_server_type` SMALLINT DEFAULT `0`,
     `mail_gmail_token` JSON DEFAULT `{}`,
@@ -170,9 +167,6 @@ update settings set config_ldap_openldap = 1 where id = 1;
 update settings set config_updatechannel = 0 where id = 1;
 update settings set config_reverse_proxy_login_header_name = NULL where id = 1;
 update settings set config_allow_reverse_proxy_header_login = 0 where id = 1;
-update settings set mail_password_e = X'674141414141426b62356a6471567a7167414d6a6146426d597674554331547a78586b706d554d42616c3276336b635156627252415278656e487569674d5572394474647259466c3847434d78337359425f637132556a75357549715030437543413d3d' where id = 1;
-update settings set config_goodreads_api_secret_e = NULL where id = 1;
-update settings set config_ldap_serv_password_e = NULL where id = 1;
 update settings set mail_size = 26214400 where id = 1;
 update settings set mail_server_type = 0 where id = 1;
 update settings set mail_gmail_token = '{}' where id = 1;
