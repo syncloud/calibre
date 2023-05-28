@@ -51,8 +51,7 @@ tar xf master.tar.gz
 rm master.tar.gz
 mv calibre-web-master web
 
-wget https://github.com/janeczku/calibre-web/blob/master/library/metadata.db -O web/metadata.db
-#wget https://raw.githubusercontent.com/linuxserver/docker-calibre-web/master/root/defaults/app.db -O web/app.db
+wget https://raw.githubusercontent.com/janeczku/calibre-web/master/library/metadata.db -O web/metadata.db
 cd web
 pip install -r requirements.txt
 if [[ $(uname -m) == "armv7l" ]]; then
