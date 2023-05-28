@@ -7,5 +7,5 @@ export CALIBRE_UNIX_SOCKET=$DATA_DIR/calibre.sock
 export FLASK_DEBUG=true
 export CALIBRE_DBPATH=$DATA_DIR
 export CALIBRE_LDAP_AUTO_CREATE=true
-export CALIBRE_LDAP_ADMIN_GROUP_FILTER='(&(cn=syncloud,ou=groups,dc=syncloud,dc=org)(memberUid=%s))'
+export CALIBRE_LDAP_ADMIN_GROUP_FILTER='(&(cn=syncloud)(&(objectClass=posixGroup)(memberUid=%s)))'
 exec ${DIR}/calibre/bin/python cps.py -p $DATA_DIR/app.db
