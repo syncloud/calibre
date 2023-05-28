@@ -183,7 +183,7 @@ update settings set config_ldap_key_path = '' where id = 1;
 update settings set config_ldap_member_user_object = '' where id = 1;
 update settings set config_ldap_group_object_filter = '(&(objectclass=posixGroup)(cn=%s))' where id = 1;
 update settings set config_ldap_group_members_field = 'memberUid' where id = 1;
-update settings set config_ldap_group_name = 'calibreweb' where id = 1;
+update settings set config_ldap_group_name = 'syncloud' where id = 1;
 update settings set config_kepubifypath = '' where id = 1;
 update settings set config_upload_formats = 'cbz,pdf,m4b,epub,opus,kepub,azw,ogg,flac,cbt,txt,mp3,djvu,azw3,html,rtf,docx,mp4,m4a,mobi,wav,lit,doc,odt,cbr,prc,fb2' where id = 1;
 update settings set config_unicode_filename = 0 where id = 1;
