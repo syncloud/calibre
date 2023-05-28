@@ -161,7 +161,7 @@ update settings set config_ldap_use_ssl = 0 where id = 1;
 update settings set config_ldap_use_tls = 0 where id = 1;
 update settings set config_ldap_require_cert = 0 where id = 1;
 update settings set config_ldap_cert_path = NULL where id = 1;
-update settings set config_ldap_dn = 'ou=users,dc=syncloud,dc=org' where id = 1;
+update settings set config_ldap_dn = 'dc=syncloud,dc=org' where id = 1;
 update settings set config_ldap_user_object = '(&(objectclass=inetOrgPerson)(cn=%s))' where id = 1;
 update settings set config_ldap_openldap = 1 where id = 1;
 update settings set config_updatechannel = 0 where id = 1;
