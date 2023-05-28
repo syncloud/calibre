@@ -111,7 +111,7 @@ update settings set mail_use_ssl = 0 where id = 1;
 update settings set mail_login = 'mail@example.com' where id = 1;
 update settings set mail_password = NULL where id = 1;
 update settings set mail_from = 'calibre <mail@example.com>' where id = 1;
-update settings set config_calibre_dir = NULL where id = 1;
+update settings set config_calibre_dir = '/var/snap/calibre/current' where id = 1;
 update settings set config_port = 8083 where id = 1;
 update settings set config_certfile = NULL where id = 1;
 update settings set config_keyfile = NULL where id = 1;
