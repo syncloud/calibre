@@ -35,6 +35,9 @@ apps:
   sqlite:
     command: sqlite/bin/sqlite.sh
 
+  python:
+    command: calibre/bin/python
+
 confinement: strict
 description: Calibre
 grade: stable

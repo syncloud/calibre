@@ -79,6 +79,10 @@ def test_access_change_event(device):
     device.run_ssh('snap run calibre.access-change > {0}/access-change.log'.format(TMP_DIR))
 
 
+def test_image_magic(device):
+    device.run_ssh('snap run calibre.python -c \'from wand.image import Image\'')
+
+
 def test_remove(device, app):
     response = device.app_remove(app)
     assert response.status_code == 200, response.text
