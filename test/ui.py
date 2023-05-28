@@ -33,10 +33,9 @@ def test_login(selenium, device_user, device_password):
     password.send_keys(device_password)
     selenium.screenshot('login')
     password.send_keys(Keys.RETURN)
-    selenium.find_by_xpath("//div[contains(.,'CS Dashboard')]")
+    selenium.find_by_xpath("//h2[contains(.,'Discover')]")
     selenium.screenshot('main')
 
 
 def test_teardown(driver):
     driver.quit()
-
