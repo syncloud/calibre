@@ -121,7 +121,7 @@ update settings set config_random_books = 4 where id = 1;
 update settings set config_read_column = 0 where id = 1;
 update settings set config_title_regex = '^(A|The|An|Der|Die|Das|Den|Ein|Eine|Einen|Dem|Des|Einem|Eines)\s+' where id = 1;
 update settings set config_log_level = 20 where id = 1;
-update settings set config_uploading = 0 where id = 1;
+update settings set config_uploading = 1 where id = 1;
 update settings set config_anonbrowse = 0 where id = 1;
 update settings set config_public_reg = 0 where id = 1;
 update settings set config_default_role = 0 where id = 1;
