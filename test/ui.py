@@ -39,5 +39,11 @@ def test_login(selenium, device_user, device_password):
     selenium.screenshot('main')
 
 
+def test_upload(selenium):
+    check_output(['wget', 'https://github.com/IDPF/epub3-samples/releases/download/20170606/vertically-scrollable-manga.epub'])
+    selenium.find_by_xpath("//input[@name='upload']").send_keys('vertically-scrollable-manga.epub')
+    selenium.screenshot('upload')
+
+
 def test_teardown(driver):
     driver.quit()
