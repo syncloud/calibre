@@ -40,7 +40,7 @@ apt-get install -y --no-install-recommends \
   libmagickwand-dev
 
 #mv /usr/lib/*-linux*/ImageMagick-*/modules-*/coders /usr/lib/ImageMagickCoders
-mkdir
+mkdir /ImageMagick
 cd /ImageMagick
 ln -s ../usr/lib/*-linux-gnu* lib
 
