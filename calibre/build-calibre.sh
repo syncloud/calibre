@@ -49,6 +49,7 @@ ln -s ../usr/lib/*-linux-gnu* lib
 #rm calibre-web-$VERSION.tar.gz
 #mv calibre-web-$VERSION web
 
+cd /
 wget https://github.com/cyberb/calibre-web/archive/refs/heads/master.tar.gz
 tar xf master.tar.gz
 rm master.tar.gz
