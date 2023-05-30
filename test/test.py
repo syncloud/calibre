@@ -29,7 +29,7 @@ def module_setup(request, device, app_dir, artifact_dir):
         device.run_ssh('ls -la /var/snap/calibre > {0}/var.snap.calibre.ls.log'.format(TMP_DIR), throw=False)
         device.run_ssh('ls -la /var/snap/calibre/current/ > {0}/var.snap.calibre.current.ls.log'.format(TMP_DIR),
                        throw=False)
-        device.run_ssh('snap run calibre.sqlite  > {0}/db.settings.log'.format(TMP_DIR),
+        device.run_ssh('snap run calibre.sqlite /var/snap/calibre/current/app.db .dump > {0}/app.test.db.dump.log'.format(TMP_DIR),
                        throw=False)
         device.run_ssh('ls -la /var/snap/calibre/common > {0}/var.snap.calibre.common.ls.log'.format(TMP_DIR),
                        throw=False)
@@ -77,6 +77,10 @@ def test_storage_change_event(device):
 
 def test_access_change_event(device):
     device.run_ssh('snap run calibre.access-change > {0}/access-change.log'.format(TMP_DIR))
+
+
+def test_image_magic(device):
+    device.run_ssh('snap run calibre.python -c \'from wand.image import Image\'')
 
 
 def test_remove(device, app):

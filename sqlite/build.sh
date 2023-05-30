@@ -6,6 +6,7 @@ cd ${DIR}
 BUILD_DIR=${DIR}/../build/snap/sqlite
 while ! docker version ; do
   echo "waiting for docker"
+  sleep 1
 done
 docker create --name=sqlite keinos/sqlite3:3.38.5
 mkdir -p ${BUILD_DIR}

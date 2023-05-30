@@ -1,6 +1,7 @@
 package pkg
 
 import (
+	"github.com/google/uuid"
 	cp "github.com/otiai10/copy"
 	"os"
 	"path"
@@ -37,6 +38,17 @@ func (i *Installer) Install() error {
 	}
 
 	err = cp.Copy(path.Join(AppDir, "calibre/web/app.db"), path.Join(DataDir, "app.db"))
+	if err != nil {
+		return err
+	}
+
+	err = cp.Copy(path.Join(AppDir, "calibre/web/metadata.db"), path.Join(DataDir, "metadata.db"))
+	if err != nil {
+		return err
+	}
+
+	secretKey := uuid.New().String()
+	err = os.WriteFile(path.Join(DataDir, "secret.key"), []byte(secretKey), 0644)
 	if err != nil {
 		return err
 	}

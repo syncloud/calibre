@@ -17,7 +17,9 @@ apt-get install -y --no-install-recommends \
   build-essential \
   libldap2-dev \
   libsasl2-dev \
-  python3-dev
+  python3-dev \
+  cmake \
+  ninja-build
 
 # runtime
 apt-get install -y --no-install-recommends \
@@ -34,16 +36,31 @@ apt-get install -y --no-install-recommends \
   python3-minimal \
   python3-pip \
   python3-pkg-resources \
-  unrar
+  unrar \
+  libmagickwand-dev
 
-wget https://github.com/janeczku/calibre-web/releases/download/$VERSION/calibre-web-$VERSION.tar.gz
-tar xf calibre-web-$VERSION.tar.gz
-rm calibre-web-$VERSION.tar.gz
-mv calibre-web-$VERSION web
-wget https://github.com/janeczku/calibre-web/blob/master/library/metadata.db -O web/metadata.db
-#wget https://raw.githubusercontent.com/linuxserver/docker-calibre-web/master/root/defaults/app.db -O web/app.db
-#cd web
+#mv /usr/lib/*-linux*/ImageMagick-*/modules-*/coders /usr/lib/ImageMagickCoders
+mkdir /ImageMagick
+cd /ImageMagick
+ln -s ../usr/lib/*-linux-gnu* lib
+
+#wget https://github.com/janeczku/calibre-web/releases/download/$VERSION/calibre-web-$VERSION.tar.gz
+#tar xf calibre-web-$VERSION.tar.gz
+#rm calibre-web-$VERSION.tar.gz
+#mv calibre-web-$VERSION web
+
+cd /
+wget https://github.com/cyberb/calibre-web/archive/refs/heads/master.tar.gz
+tar xf master.tar.gz
+rm master.tar.gz
+mv calibre-web-master web
+
+wget https://raw.githubusercontent.com/janeczku/calibre-web/master/library/metadata.db -O web/metadata.db
+cd web
 pip install -r requirements.txt
+if [[ $(uname -m) == "armv7l" ]]; then
+  sed -i '/python-Levenshtein.*/d' optional-requirements.txt
+fi
 pip install -r optional-requirements.txt
 
 curl -o \
@@ -59,7 +76,9 @@ apt-get -y purge \
   build-essential \
   libldap2-dev \
   libsasl2-dev \
-  python3-dev
+  python3-dev \
+  cmake \
+  ninja-build
 apt-get -y autoremove
 rm -rf \
     /tmp/* \

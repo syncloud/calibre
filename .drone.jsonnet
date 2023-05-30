@@ -74,9 +74,9 @@ local build(arch, test_ui, dind, kepubify_arch) = [{
         },
         {
             name: "database",
-            image: "keinos/sqlite3:3.38.5",
+            image: "debian:buster-slim",
             commands: [
-                "sqlite3 build/snap/calibre/app.db < config/init.sql",
+                "./build/snap/sqlite/bin/sqlite.sh build/snap/calibre/web/app.db < config/init.sql",
             ]
         },
         {
@@ -122,7 +122,7 @@ local build(arch, test_ui, dind, kepubify_arch) = [{
             commands: [
               "cd test",
               "./deps.sh",
-              "py.test -x -s ui.py --distro=buster --ui-mode=desktop --domain=buster.com --device-host=" + name + ".buster.com --app=" + name + " --browser=" + browser,
+              "py.test -x -s ui.py --distro=buster --ui-mode=desktop --domain=buster.com --device-host=" + name + ".buster.com --app=" + name + " --browser-height=2000 --browser=" + browser,
             ],
             volumes: [{
                 name: "videos",
