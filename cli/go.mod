@@ -1,6 +1,7 @@
 module hooks
 
 require (
+	github.com/google/uuid v1.3.0
 	github.com/otiai10/copy v1.11.0
 	github.com/spf13/cobra v1.1.1
 )

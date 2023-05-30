@@ -356,14 +356,9 @@ CREATE TABLE kobo_statistics (
 	FOREIGN KEY(kobo_reading_state_id) REFERENCES kobo_reading_state (id)
 );
 CREATE TABLE IF NOT EXISTS "user" (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,name VARCHAR(64),email VARCHAR(120),role SMALLINT,password VARCHAR,kindle_mail VARCHAR(120),locale VARCHAR(2),sidebar_view INTEGER,default_language VARCHAR(3),denied_tags VARCHAR,allowed_tags VARCHAR,denied_column_value VARCHAR,allowed_column_value VARCHAR,view_settings JSON,kobo_only_shelves_sync SMALLINT,UNIQUE (name),UNIQUE (email));
-INSERT INTO user VALUES(1,'admin','',159,'pbkdf2:sha256:50000$Nyc0MwDU$cee9472a0f20e259efaa37f8ff60ab2dbd426871803226234c95f6c0b58547d1','','en',8191,'all','','','','','{}',0);
-INSERT INTO user VALUES(2,'Guest','no@email',32,'','','en',1,'all','','','','','{}',0);
 CREATE TABLE flask_settings (
 	id INTEGER NOT NULL, 
 	flask_session_key BLOB, 
 	PRIMARY KEY (id)
 );
-INSERT INTO flask_settings VALUES(1,X'fec279dca101b3294908bbf0e458aaf8037b73d82d09c112545c17a511906d59');
-DELETE FROM sqlite_sequence;
-INSERT INTO sqlite_sequence VALUES('user',2);
 COMMIT;
