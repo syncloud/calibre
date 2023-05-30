@@ -48,6 +48,7 @@ def test_upload(selenium):
     file = selenium.driver.find_element(By.XPATH, "//input[@name='btn-upload']")
     file.send_keys('vertically-scrollable-manga.epub')
     # file.submit()
+    selenium.find_by_xpath("//h2[contains(.,'Uploaded')]")
     selenium.screenshot('upload')
 
 
