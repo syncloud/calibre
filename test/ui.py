@@ -51,7 +51,7 @@ def test_upload(selenium):
     selenium.find_by_xpath("//label[contains(.,'Book Title')]")
     selenium.screenshot('upload-ready')
     selenium.find_by_xpath("//button[contains(.,'Save')]").click()
-    selenium.find_by_xpath("//button[contains(.,'Uploaded')]")
+    selenium.find_by_xpath("//div[contains(.,'Metadata successfully updated')]")
     selenium.screenshot('upload-saved')
 
 
