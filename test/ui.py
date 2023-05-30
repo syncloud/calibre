@@ -48,8 +48,11 @@ def test_upload(selenium):
     file = selenium.driver.find_element(By.XPATH, "//input[@name='btn-upload']")
     file.send_keys('vertically-scrollable-manga.epub')
     # file.submit()
-    selenium.find_by_xpath("//h2[contains(.,'Uploaded')]")
-    selenium.screenshot('upload')
+    selenium.find_by_xpath("//label[contains(.,'Book Title')]")
+    selenium.screenshot('upload-ready')
+    selenium.find_by_xpath("//button[contains(.,'Save')]").click()
+    selenium.find_by_xpath("//button[contains(.,'Uploaded')]")
+    selenium.screenshot('upload-saved')
 
 
 def test_teardown(driver):

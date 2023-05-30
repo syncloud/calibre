@@ -122,7 +122,7 @@ local build(arch, test_ui, dind, kepubify_arch) = [{
             commands: [
               "cd test",
               "./deps.sh",
-              "py.test -x -s ui.py --distro=buster --ui-mode=desktop --domain=buster.com --device-host=" + name + ".buster.com --app=" + name + " --browser=" + browser,
+              "py.test -x -s ui.py --distro=buster --ui-mode=desktop --domain=buster.com --device-host=" + name + ".buster.com --app=" + name + " --browser-height=2000 --browser=" + browser,
             ],
             volumes: [{
                 name: "videos",
