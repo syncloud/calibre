@@ -50,10 +50,11 @@ ln -s ../usr/lib/*-linux-gnu* lib
 #mv calibre-web-$VERSION web
 
 cd /
-wget https://github.com/cyberb/calibre-web/archive/refs/heads/master.tar.gz
-tar xf master.tar.gz
-rm master.tar.gz
-mv calibre-web-master web
+VERSION=debug
+wget https://github.com/cyberb/calibre-web/archive/refs/heads/$VERSION.tar.gz
+tar xf $VERSION.tar.gz
+rm $VERSION.tar.gz
+mv calibre-web-$VERSION web
 
 wget https://raw.githubusercontent.com/janeczku/calibre-web/master/library/metadata.db -O web/metadata.db
 cd web
