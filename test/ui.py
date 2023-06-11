@@ -55,5 +55,22 @@ def test_upload(selenium):
     selenium.screenshot('upload-saved')
 
 
+def test_cover(selenium):
+    selenium.driver.find_element(By.ID, "edit_book").click()
+    file = selenium.driver.find_element(By.XPATH, "//input[@name='btn-upload-cover']")
+    file.send_keys('profile.jpeg')
+    # file.submit()
+    
+    selenium.screenshot('upload-cover-ready')
+    selenium.find_by_xpath("//button[contains(.,'Save')]").click()
+    selenium.find_by_xpath("//div[contains(.,'Metadata successfully updated')]")
+    selenium.screenshot('upload-cover-saved')
+
+
+def test_teardown(driver):
+    driver.quit()
+hot('upload-saved')
+
+
 def test_teardown(driver):
     driver.quit()
