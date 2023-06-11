@@ -69,8 +69,3 @@ def test_cover(selenium):
 
 def test_teardown(driver):
     driver.quit()
-hot('upload-saved')
-
-
-def test_teardown(driver):
-    driver.quit()
