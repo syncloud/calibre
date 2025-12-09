@@ -1,4 +1,4 @@
-FROM python:3.8-buster
+FROM python:3.12-slim-bookworm
 ARG KEPUBIFY_ARCH
 ARG VERSION
 ADD ./build-calibre.sh /build/build-calibre.sh
