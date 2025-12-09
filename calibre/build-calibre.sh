@@ -3,6 +3,8 @@ VERSION=$1
 KEPUBIFY_ARCH=$2
 KEPUBIFY_VERSION=4.0.4
 
+apt update
+apt install -y curl 
 if [[ $(uname -m) == "armv7l" ]]; then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh  -s -- -y
   source "$HOME/.cargo/env"
