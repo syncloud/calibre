@@ -10,10 +10,9 @@ if [[ $(uname -m) == "armv7l" ]]; then
   source "$HOME/.cargo/env"
 fi
 
+sed -i 's/^Components: main$/& contrib non-free non-free-firmware/' /etc/apt/sources.list.d/debian.sources
 apt update
-apt install -y software-properties-common
-apt-add-repository non-free
-apt-get update
+
 # build
 apt-get install -y --no-install-recommends \
   build-essential \
