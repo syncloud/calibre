@@ -57,7 +57,7 @@ local build(arch, test_ui, dind, kepubify_arch) = [
       },
       {
         name: 'calibre',
-        image: 'docker:' + dind,
+        image: 'python:' + python,
         commands: [
           './calibre/build-calibre.sh ' + version + ' ' + kepubify_arch,
         ],
