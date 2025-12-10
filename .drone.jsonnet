@@ -72,7 +72,7 @@ local build(arch, test_ui, dind, kepubify_arch) = [
         name: 'calibre test',
         image: 'syncloud/platform-' + distro_default + '-' + arch + ':' + platform,
         commands: [
-          './calobre/test.sh',
+          './calibre/test.sh',
         ],
       },
 
