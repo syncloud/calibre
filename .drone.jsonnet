@@ -59,14 +59,9 @@ local build(arch, test_ui, dind, kepubify_arch) = [
         name: 'calibre',
         image: 'docker:' + dind,
         commands: [
-          './calibre/build.sh ' + version + ' ' + kepubify_arch,
+          './calibre/build-calibre.sh ' + version + ' ' + kepubify_arch,
         ],
-        volumes: [
-          {
-            name: 'dockersock',
-            path: '/var/run',
-          },
-        ],
+        
       },
  {
         name: 'calibre test',

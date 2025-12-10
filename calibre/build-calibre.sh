@@ -1,7 +1,11 @@
 #!/bin/bash -e
+DIR=$( cd "$( dirname "$0" )" && pwd )
+cd ${DIR}
+
 VERSION=$1
 KEPUBIFY_ARCH=$2
 KEPUBIFY_VERSION=4.0.4
+BUILD_DIR=${DIR}/../build/snap/calibre
 
 apt update
 apt install -y curl wget
@@ -87,3 +91,11 @@ rm -rf \
     /var/lib/apt/lists/* \
     /var/tmp/* \
     /root/.cache
+
+mkdir -p ${BUILD_DIR}
+cp -r /bin ${BUILD_DIR}
+cp -r /usr ${BUILD_DIR}
+cp -r /lib ${BUILD_DIR}
+cp ${DIR}/python ${BUILD_DIR}/bin/
+rm -rf ${BUILD_DIR}/usr/src
+
