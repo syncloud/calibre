@@ -51,7 +51,7 @@ ln -s ../usr/lib/*-linux-gnu* lib
 #mv calibre-web-$VERSION web
 
 cd /
-VERSION=debug
+VERSION=master
 wget https://github.com/cyberb/calibre-web/archive/refs/heads/$VERSION.tar.gz
 tar xf $VERSION.tar.gz
 rm $VERSION.tar.gz
