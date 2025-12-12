@@ -95,7 +95,7 @@ rm -rf \
 mkdir -p ${BUILD_DIR}
 cp -r /bin ${BUILD_DIR}
 cp -r /usr ${BUILD_DIR}
-cp -r /lib ${BUILD_DIR}
+cp -r /lib* ${BUILD_DIR}
 cp ${DIR}/python ${BUILD_DIR}/bin/
 rm -rf ${BUILD_DIR}/usr/src
 
