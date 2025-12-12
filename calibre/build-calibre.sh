@@ -22,6 +22,8 @@ apt-get install -y --no-install-recommends \
   build-essential \
   libldap2-dev \
   libsasl2-dev \
+  libxml2-dev \
+  libxslt-dev \
   python3-dev \
   cmake \
   ninja-build
