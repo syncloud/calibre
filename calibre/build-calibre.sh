@@ -99,8 +99,3 @@ cp -r /lib* ${BUILD_DIR}
 cp -r /web ${BUILD_DIR}
 cp ${DIR}/python ${BUILD_DIR}/bin/
 rm -rf ${BUILD_DIR}/usr/src
-
-b)
-cp ${DIR}/python ${BUILD_DIR}/bin/
-rm -rf ${BUILD_DIR}/usr/src
-
