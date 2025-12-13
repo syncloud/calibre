@@ -7,4 +7,5 @@ BUILD_DIR=${DIR}/../build/snap/calibre
 ls -la ${BUILD_DIR}/
 ls -la ${BUILD_DIR}/lib*
 ${BUILD_DIR}/bin/python --version
-${BUILD_DIR}/bin/python -c 'from wand.image import Image'"
+${BUILD_DIR}/bin/python -c 'from wand.image import Image'
+
