@@ -45,7 +45,8 @@ apt-get install -y --no-install-recommends \
   python3-pip \
   python3-pkg-resources \
   unrar \
-  libmagickwand-dev
+  libmagickwand-dev \
+  libmagic-dev
 
 #mv /usr/lib/*-linux*/ImageMagick-*/modules-*/coders /usr/lib/ImageMagickCoders
 mkdir /ImageMagick
