@@ -5,6 +5,7 @@ cd ${DIR}/calibre/web
 DATA_DIR=/var/snap/calibre/current
 export CALIBRE_UNIX_SOCKET=$DATA_DIR/calibre.sock
 export FLASK_DEBUG=true
+export CALIBRE_ANONYMOUS_ENABLED=false
 export CALIBRE_DBPATH=$DATA_DIR
 export CALIBRE_LDAP_AUTO_CREATE=true
 export CALIBRE_LDAP_ADMIN_GROUP_FILTER='(&(cn=syncloud)(&(objectClass=posixGroup)(memberUid=%s)))'
