@@ -4,7 +4,7 @@ from syncloudlib.integration.hosts import add_host_alias
 from syncloudlib.integration.installer import local_install
 from syncloudlib.http import wait_for_rest
 import requests
-
+from test import lib
 TMP_DIR = '/tmp/syncloud'
 
 
@@ -31,4 +31,11 @@ def test_upgrade(device, device_user, device_password, device_host, app_archive_
     device.run_ssh('snap install calibre', retries=10)
     local_install(device_host, device_password, app_archive_path)
     wait_for_rest(requests.session(), "https://{0}".format(app_domain), 200, 100)
+
+
+def test_login(selenium, device_user, device_password):
+    selenium.open_app()
+    lib.login(selenium, device_user, device_password)
+    selenium.screenshot('upgrade-main')
+
 

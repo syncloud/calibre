@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from subprocess import check_output
 from syncloudlib.integration.hosts import add_host_alias
-
+from test import lib
 DIR = dirname(__file__)
 TMP_DIR = '/tmp/syncloud/ui'
 
@@ -30,12 +30,7 @@ def test_start(module_setup, app, domain, device_host):
 
 def test_login(selenium, device_user, device_password):
     selenium.open_app()
-    selenium.find_by_xpath("//input[@name='username']").send_keys(device_user)
-    password = selenium.find_by_xpath("//input[@name='password']")
-    password.send_keys(device_password)
-    selenium.screenshot('login')
-    password.send_keys(Keys.RETURN)
-    selenium.find_by_xpath("//h2[contains(.,'Discover')]")
+    lib.login(selenium, device_user, device_password)
     selenium.screenshot('main')
 
 
