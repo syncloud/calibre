@@ -66,6 +66,3 @@ def test_cover(selenium):
     selenium.find_by_xpath("//div[contains(.,'Metadata successfully updated')]")
     selenium.screenshot('upload-cover-saved')
 
-
-def test_teardown(driver):
-    driver.quit()
