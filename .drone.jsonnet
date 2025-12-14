@@ -71,7 +71,7 @@ local build(arch, test_ui, dind, kepubify_arch) = [
         ],
       },
  {
-             name: 'calibre test',
+             name: 'calibre test buster',
              image: 'syncloud/platform-buster-' + arch + ':25.02',
              commands: [
                './calibre/test.sh',
