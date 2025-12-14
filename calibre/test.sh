@@ -6,6 +6,7 @@ cd ${DIR}
 BUILD_DIR=${DIR}/../build/snap/calibre
 ls -la ${BUILD_DIR}/
 ls -la ${BUILD_DIR}/lib*
+ldd ${BUILD_DIR}/usr/local/bin/python3
 ${BUILD_DIR}/bin/python --version
 ${BUILD_DIR}/bin/python -c 'from wand.image import Image'
 ${BUILD_DIR}/bin/python -c 'import magic'
