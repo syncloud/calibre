@@ -105,5 +105,5 @@ cp -r /web ${BUILD_DIR}
 cp -r /ImageMagick ${BUILD_DIR}
 cp -r /opt ${BUILD_DIR}
 
-cp ${DIR}/* ${BUILD_DIR}/bin/
+cp ${DIR}/bin/* ${BUILD_DIR}/bin/
 rm -rf ${BUILD_DIR}/usr/src
