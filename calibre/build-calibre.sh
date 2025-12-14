@@ -99,9 +99,10 @@ rm -rf \
 mkdir -p ${BUILD_DIR}
 cp -r /bin ${BUILD_DIR}
 cp -r /usr ${BUILD_DIR}
-cp -r /lib* ${BUILD_DIR}
+cp -r /lib ${BUILD_DIR}
 cp -r /web ${BUILD_DIR}
 cp -r /ImageMagick ${BUILD_DIR}
+cp -r /opt ${BUILD_DIR}
 ldd /usr/local/bin/python3
 cp ${DIR}/python ${BUILD_DIR}/bin/
 rm -rf ${BUILD_DIR}/usr/src

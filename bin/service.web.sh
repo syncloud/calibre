@@ -10,4 +10,8 @@ export CALIBRE_DBPATH=$DATA_DIR
 export CALIBRE_LDAP_AUTO_CREATE=true
 export CALIBRE_LDAP_ADMIN_GROUP_FILTER='(&(cn=syncloud)(&(objectClass=posixGroup)(memberUid=%s)))'
 export SECRET_KEY=$(cat $DATA_DIR/secret.key)
+export CALIBRE_BINARIES=$DIR/calibre/opt/calibre
+export CALIBRE_CONVERTER=$DIR/calibre/opt/calibre/ebook-converter
+export CALIBRE_UNRAR=$DIR/calibre/usr/bin/unrar
+export CALIBRE_KEPUBIFY=$DIR/calibre/usr/bin/kepubify
 exec ${DIR}/calibre/bin/python cps.py -p $DATA_DIR/app.db

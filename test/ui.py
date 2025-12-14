@@ -61,3 +61,9 @@ def test_cover(selenium):
     selenium.find_by_xpath("//div[contains(.,'Metadata successfully updated')]")
     selenium.screenshot('upload-cover-saved')
 
+
+def test_about(selenium):
+    selenium.find_by(By.XPATH, "//a[contains(.,'About')]").click()
+    assert selenium.find_by(By.XPATH, "//a[contains(.,'Unrar']/../").text == "1.2.3"
+    selenium.screenshot('about')
+
