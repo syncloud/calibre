@@ -104,6 +104,6 @@ cp -r /lib ${BUILD_DIR}
 cp -r /web ${BUILD_DIR}
 cp -r /ImageMagick ${BUILD_DIR}
 cp -r /opt ${BUILD_DIR}
-ldd /usr/local/bin/python3
-cp ${DIR}/python ${BUILD_DIR}/bin/
+
+cp ${DIR}/* ${BUILD_DIR}/bin/
 rm -rf ${BUILD_DIR}/usr/src
