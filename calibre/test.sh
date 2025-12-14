@@ -11,8 +11,8 @@ ${BUILD_DIR}/bin/python --version
 ${BUILD_DIR}/bin/python -c 'from wand.image import Image'
 ${BUILD_DIR}/bin/python -c 'import magic'
 
-$BUILD_DIR/calibre/bin/unrar -version
-$BUILD_DIR/calibre/usr/bin/kepubify --version
-ls -la $BUILD_DIR/calibre/opt
-ls -la $BUILD_DIR/calibre/opt/calibre
-#$BUILD_DIR/calibre/opt/calibre/ebook-converter --help
+$BUILD_DIR/bin/unrar -version
+$BUILD_DIR/usr/bin/kepubify --version
+ls -la $BUILD_DIR/opt
+ls -la $BUILD_DIR/opt/calibre
+#$BUILD_DIR/opt/calibre/ebook-converter --help
