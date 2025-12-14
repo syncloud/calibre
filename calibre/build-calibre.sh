@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash -xe
 DIR=$( cd "$( dirname "$0" )" && pwd )
 cd ${DIR}
 
@@ -46,7 +46,8 @@ apt-get install -y --no-install-recommends \
   python3-pkg-resources \
   unrar \
   libmagickwand-dev \
-  libmagic-dev
+  libmagic-dev \
+  calibre
 
 #mv /usr/lib/*-linux*/ImageMagick-*/modules-*/coders /usr/lib/ImageMagickCoders
 mkdir /ImageMagick
@@ -75,7 +76,7 @@ pip install -r optional-requirements.txt
 
 curl -o \
   /usr/bin/kepubify -L \
-  https://github.com/pgaskin/kepubify/releases/download/${KEPUBIFY_VERSION}/kepubify-linux-${KEPUBIFY_ARCH}
+  https://github.com/pgaskin/kepubify/releases/download/v${KEPUBIFY_VERSION}/kepubify-linux-${KEPUBIFY_ARCH}
 
 if [[ $(uname -m) == "armv7l" ]]; then
   yes | rustup self uninstall
