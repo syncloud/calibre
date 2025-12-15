@@ -78,6 +78,8 @@ curl -o \
   /usr/bin/kepubify -L \
   https://github.com/pgaskin/kepubify/releases/download/v${KEPUBIFY_VERSION}/kepubify-linux-${KEPUBIFY_ARCH}
 
+chmod +x /usr/bin/kepubify
+
 if [[ $(uname -m) == "armv7l" ]]; then
   yes | rustup self uninstall
 fi
@@ -108,4 +110,3 @@ cp -r /opt ${BUILD_DIR}
 mkdir ${BUILD_DIR}/bin
 cp ${DIR}/bin/* ${BUILD_DIR}/bin
 rm -rf ${BUILD_DIR}/usr/src
-
