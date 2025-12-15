@@ -11,7 +11,7 @@ ${BUILD_DIR}/bin/python --version
 ${BUILD_DIR}/bin/python -c 'from wand.image import Image'
 ${BUILD_DIR}/bin/python -c 'import magic'
 ls -la $BUILD_DIR/opt
-ls -la $BUILD_DIR/opt/calibre
+#ls -la $BUILD_DIR/opt/calibre
 ls -la $BUILD_DIR/bin
 $BUILD_DIR/bin/unrar -version
 $BUILD_DIR/usr/bin/kepubify --version
