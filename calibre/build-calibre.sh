@@ -98,12 +98,14 @@ rm -rf \
     /root/.cache
 
 mkdir -p ${BUILD_DIR}
-cp -r /bin ${BUILD_DIR}
+#cp -r /bin ${BUILD_DIR}
 cp -r /usr ${BUILD_DIR}
 cp -r /lib ${BUILD_DIR}
 cp -r /web ${BUILD_DIR}
 cp -r /ImageMagick ${BUILD_DIR}
 cp -r /opt ${BUILD_DIR}
 
-cp ${DIR}/bin/* ${BUILD_DIR}/bin/
+mkdir ${BUILD_DIR}/bin
+cp ${DIR}/bin/* ${BUILD_DIR}/bin
 rm -rf ${BUILD_DIR}/usr/src
+
