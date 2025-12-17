@@ -64,6 +64,6 @@ def test_cover(selenium):
 
 def test_about(selenium):
     selenium.find_by(By.XPATH, "//a[contains(.,'About')]").click()
-    assert selenium.find_by(By.XPATH, "//a[contains(.,'Unrar']/../").text == "1.2.3"
+    assert selenium.find_by(By.XPATH, "//a[contains(.,'Unrar')]/../").text == "1.2.3"
     selenium.screenshot('about')
 
