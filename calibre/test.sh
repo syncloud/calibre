@@ -15,4 +15,4 @@ ls -la $BUILD_DIR/opt
 ls -la $BUILD_DIR/bin
 $BUILD_DIR/bin/unrar -version
 $BUILD_DIR/usr/bin/kepubify --version
-$BUILD_DIR/bin/ebook-converter --help
+$BUILD_DIR/bin/ebook-convert --help
