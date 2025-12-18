@@ -1,0 +1,8 @@
+#!/bin/bash -e
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )
+
+export CALIBRE_PYTHON_PATH=$DIR/usr/lib/calibre
+export CALIBRE_RESOURCES_PATH=$DIR/usr/share/calibre
+export CALIBRE_EXTENSIONS_PATH=$DIR/usr/lib/calibre/calibre/plugins
+export CALIBRE_EXECUTABLES_PATH=$DIR/usr/bin
+exec $DIR/bin/python $DIR/usr/bin/ebook-convert "$@"
