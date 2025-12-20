@@ -67,6 +67,6 @@ def test_about(selenium):
     selenium.screenshot('about')
     assert "UNRAR 6" in selenium.find_by(By.XPATH, "//th[contains(.,'Unrar')]/../td").text
     assert "kepubify v4" in selenium.find_by(By.XPATH, "//th[contains(.,'Kepubify')]/../td").text
-    assert "ebook 123" in selenium.find_by(By.XPATH, "//th[contains(.,'Ebook converter')]/../td").text
+    assert "calibre 6" in selenium.find_by(By.XPATH, "//th[contains(.,'Ebook converter')]/../td").text
     
 
