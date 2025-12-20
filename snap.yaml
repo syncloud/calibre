@@ -7,6 +7,7 @@ apps:
     - network
     - network-bind
     restart-condition: always
+    restart-delay: 10s
 
   web:
     user: calibre
@@ -16,6 +17,7 @@ apps:
     - network
     - network-bind
     restart-condition: always
+    restart-delay: 10s
 
   storage-change:
     command: bin/cli storage-change
@@ -33,10 +35,10 @@ apps:
     command: bin/cli restore-post-start
 
   sqlite:
-    command: sqlite/bin/sqlite.sh
+    command: bin/sqlite.sh
 
   python:
-    command: calibre/bin/python
+    command: bin/python.sh
 
 confinement: strict
 description: Calibre
