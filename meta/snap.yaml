@@ -41,7 +41,7 @@ apps:
     command: bin/python.sh
 
 confinement: strict
-description: Calibre
+description: Browsing, reading and downloading eBooks
 grade: stable
 name: calibre
-summary: Calibre
+summary: Calibre-Web
