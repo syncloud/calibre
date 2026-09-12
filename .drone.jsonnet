@@ -192,7 +192,7 @@ local build(arch, test_ui, dind, kepubify_arch) = [
         },
         command: ['snap', '-c', '${DRONE_BRANCH}'],
         when: {
-          branch: ['master', 'stable'],
+          branch: ['stable'],
           event: ['push'],
         },
       },
