@@ -222,7 +222,6 @@ local build(arch, test_ui, dind, kepubify_arch) = [
     trigger: {
       event: [
         'push',
-        'pull_request',
       ],
     },
     services: [
